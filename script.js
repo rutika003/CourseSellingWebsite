@@ -270,3 +270,26 @@ function logout() {
     localStorage.removeItem('nilsonUser');
     location.reload();
 }
+// MOBILE MENU TOGGLE
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+}
+// CLOSE MOBILE MENU AFTER CLICKING LINK
+
+const navItems = document.querySelectorAll(".nav-links a");
+
+navItems.forEach(item => {
+
+    item.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});

@@ -235,3 +235,197 @@ body {
 
 /* --- 9. FOOTER --- */
 .footer { padding: 60px 0; background: var(--bg-soft); text-align: center; border-top: 1px solid var(--border); }
+/* =========================
+   MOBILE RESPONSIVE ADD-ON
+   ADD THIS AT THE BOTTOM
+   OF YOUR EXISTING CSS
+========================= */
+
+/* Mobile Menu Button */
+
+.menu-toggle{
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Tablet */
+
+@media (max-width: 992px){
+
+    .course-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid,
+    .contact-box-large{
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 768px){
+
+    /* Navbar */
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .nav-container{
+        position: relative;
+    }
+
+    .nav-links{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #0f172a;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        display: none;
+        z-index: 999;
+    }
+
+    .nav-links.active{
+        display: flex;
+    }
+
+    /* Hero */
+
+    .hero,
+    .hero-mini{
+        text-align: center;
+        padding: 100px 20px 60px;
+    }
+
+    .hero h1,
+    .hero-mini h1{
+        font-size: 2.2rem;
+    }
+
+    /* Grids */
+
+    .course-grid{
+        grid-template-columns: 1fr;
+    }
+
+    /* Cards */
+
+    .course-card{
+        width: 100%;
+    }
+
+    .card-btns{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-enroll,
+    .btn-text-link,
+    .btn-primary,
+    .btn-outline{
+        width: 100%;
+    }
+
+    /* Contact */
+
+    .contact-left,
+    .contact-right{
+        width: 100%;
+    }
+
+    /* Forms */
+
+    .input-group input,
+    .input-group textarea,
+    .input-group select{
+        width: 100%;
+    }
+
+    /* Modal */
+
+    .modal-content,
+    .enroll-modal{
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    /* Footer */
+
+    .footer{
+        text-align: center;
+    }
+}
+
+/* Small Mobile */
+
+@media (max-width: 480px){
+
+    .hero h1,
+    .hero-mini h1{
+        font-size: 1.8rem;
+    }
+
+    .section-header h2{
+        font-size: 1.7rem;
+    }
+}
+/* =========================
+   MENUBAR STYLE IMPROVEMENT
+========================= */
+
+@media (max-width: 768px){
+
+    .navbar{
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 15px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle{
+        width: 45px;
+        height: 45px;
+        background: #0f172a;
+        color: #ffffff;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+    }
+
+    .nav-links{
+        background: #ffffff;
+        border-radius: 0 0 18px 18px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .nav-links a{
+        color: #0f172a;
+        font-weight: 600;
+        width: 100%;
+        display: block;
+        padding: 14px 0;
+    }
+
+    .nav-links a:hover{
+        background: #f1f5f9;
+        color: #2563eb;
+    }
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | DRD IT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="sub-page">
+
+    <nav class="navbar-simple">
+        <div class="container">
+            <a href="index.html" class="logo-link">DRD <span>IT</span></a>
+        </div>
+    </nav>
+
+    <header class="hero-mini">
+        <div class="container">
+            <div class="hero-badge">We are Hiring</div>
+            <h1>Build the <span class="text-gradient">Future of Tech</span></h1>
+            <p>Join a global team of educators, engineers, and visionaries.</p>
+        </div>
+    </header>
+
+    <section class="careers-full courses">
+        <div class="container">
+            <div class="course-grid">
+                
+                <div class="course-card">
+                    <div class="card-tag">Full-Time</div>
+                    <h3>Senior Tech Mentor</h3>
+                    <p>Lead our Full-Stack mastery tracks and guide student projects through expert mentorship.</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openApply('Senior Tech Mentor')">Apply Now</button>
+                        <button class="btn-text-link">View Job Description</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="card-tag">Remote</div>
+                    <h3>AI Research Lead</h3>
+                    <p>Develop cutting-edge curriculum for our Machine Learning programs and lead AI initiatives.</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openApply('AI Research Lead')">Apply Now</button>
+                        <button class="btn-text-link">View Job Description</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="card-tag">Full-Time</div>
+                    <h3>UI/UX Instructor</h3>
+                    <p>Teach modern design principles and Figma workflows to the next generation of designers.</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openApply('UI/UX Design Instructor')">Apply Now</button>
+                        <button class="btn-text-link">View Job Description</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="card-tag">Contract</div>
+                    <h3>Cloud Architect</h3>
+                    <p>Help us build and maintain our live AWS/Azure lab environments for student training.</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openApply('Cloud Architect')">Apply Now</button>
+                        <button class="btn-text-link">View Job Description</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="card-tag">Full-Time</div>
+                    <h3>DevOps Engineer</h3>
+                    <p>Automate deployment pipelines and manage enterprise server infrastructure.</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openApply('DevOps Engineer')">Apply Now</button>
+                        <button class="btn-text-link">View Job Description</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="card-tag">Internship</div>
+                    <h3>Frontend Developer</h3>
+                    <p>Gain hands-on experience building internal tools using React and modern frameworks.</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openApply('Frontend Developer Intern')">Apply Now</button>
+                        <button class="btn-text-link">View Job Description</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 DRD IT Solutions</p>
+        </div>
+    </footer>
+
+    <div id="applyOverlay" class="enroll-overlay hidden">
+        <div class="enroll-modal">
+            <button class="close-modal" onclick="closeApply()" aria-label="Close Application">&times;</button>
+            <div class="enroll-header">
+                <h2>Application Form</h2>
+                <p id="targetJob">Job Role</p>
+            </div>
+            <form onsubmit="handleApply(event)">
+                <div class="input-group">
+                    <label for="appName">Full Name</label>
+                    <input type="text" id="appName" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label for="appPortfolio">Portfolio / LinkedIn</label>
+                    <input type="url" id="appPortfolio" placeholder="https://..." required>
+                </div>
+                <div class="input-group">
+                    <label for="appResume">Resume (PDF)</label>
+                    <input type="file" id="appResume" accept=".pdf" required>
+                </div>
+                <button type="submit" class="btn-enroll btn-full btn-mt">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openApply(title) {
+            document.getElementById('targetJob').innerText = title;
+            document.getElementById('applyOverlay').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeApply() {
+            document.getElementById('applyOverlay').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        function handleApply(e) {
+            e.preventDefault();
+            alert("🚀 Application Sent Successfully!");
+            closeApply();
+        }
+    </script>
+</body>
+</html>.

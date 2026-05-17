@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRD IT | Enterprise Learning Portal</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">DRD <span>IT</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="careers.html" target="_blank">Careers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-auth" id="authZone">
+                <button class="btn-primary-small" onclick="toggleModal()">Sign In</button>
+            </div>
+            <div id="userProfile" class="user-pill hidden">
+                <div class="user-info">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span id="welcomeText">Hi, User</span>
+                </div>
+                <button onclick="logout()" class="logout-icon" title="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-badge">🚀 Next-Gen IT Training</div>
+            <h1>Master Tech with <span class="text-gradient">DRD IT</span></h1>
+            <p>Accelerate your career through industry-standard workflows and mentorship from top-tier engineers.</p>
+            
+            <div class="hero-btns">
+                <a href="#courses" class="btn-primary">Explore Courses</a>
+                <button class="btn-outline" onclick="openSyllabus('Full Stack Development', '4999')">Download Syllabus</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="hero-badge" style="background:#fef3c7; color:#d97706;">Our Mission</div>
+                    <h2>Bridging the gap between <span class="text-gradient">Education & Industry</span></h2>
+                    <p>We provide professional environments and high-fidelity curriculum for the modern tech workforce with 100% industry placement support.</p>
+                    <ul class="check-list" style="list-style: none; margin-top: 20px;">
+                        <li style="margin-bottom: 12px;"><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 10px;"></i> Industry-Integrated Curriculum</li>
+                        <li><i class="fa-solid fa-circle-check" style="color: #22c55e; margin-right: 10px;"></i> Live Cloud Lab Access</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card"><h3>15k+</h3><p>Graduates</p></div>
+                    <div class="stat-card"><h3>98%</h3><p>Success Rate</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certification Programs</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="card-tag">Web</div>
+                    <h3>Full Stack Development</h3>
+                    <p class="price-display">₹4,999</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openEnroll('Full Stack Development', '4999')">Enroll Now</button>
+                        <button class="btn-text-link" onclick="openSyllabus('Full Stack Development', '4999')">View Syllabus</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-tag">Cloud</div>
+                    <h3>Advanced Cloud Arch</h3>
+                    <p class="price-display">₹7,999</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openEnroll('Advanced Cloud Arch', '7999')">Enroll Now</button>
+                        <button class="btn-text-link" onclick="openSyllabus('Advanced Cloud Arch', '7999')">View Syllabus</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-tag">Design</div>
+                    <h3>UI/UX Masterclass</h3>
+                    <p class="price-display">₹3,499</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openEnroll('UI/UX Masterclass', '3499')">Enroll Now</button>
+                        <button class="btn-text-link" onclick="openSyllabus('UI/UX Masterclass', '3499')">View Syllabus</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-tag">Security</div>
+                    <h3>Cyber Security Pro</h3>
+                    <p class="price-display">₹5,999</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openEnroll('Cyber Security Pro', '5999')">Enroll Now</button>
+                        <button class="btn-text-link" onclick="openSyllabus('Cyber Security Pro', '5999')">View Syllabus</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-tag">Data</div>
+                    <h3>Data Science & AI</h3>
+                    <p class="price-display">₹8,999</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openEnroll('Data Science & AI', '8999')">Enroll Now</button>
+                        <button class="btn-text-link" onclick="openSyllabus('Data Science & AI', '8999')">View Syllabus</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-tag">DevOps</div>
+                    <h3>Mastering DevOps</h3>
+                    <p class="price-display">₹6,499</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openEnroll('Mastering DevOps', '6499')">Enroll Now</button>
+                        <button class="btn-text-link" onclick="openSyllabus('Mastering DevOps', '6499')">View Syllabus</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-tag">Mobile</div>
+                    <h3>React Native Expert</h3>
+                    <p class="price-display">₹4,299</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openEnroll('React Native Expert', '4299')">Enroll Now</button>
+                        <button class="btn-text-link" onclick="openSyllabus('React Native Expert', '4299')">View Syllabus</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-tag">Blockchain</div>
+                    <h3>Web3 & Solidity</h3>
+                    <p class="price-display">₹9,999</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openEnroll('Web3 & Solidity', '9999')">Enroll Now</button>
+                        <button class="btn-text-link" onclick="openSyllabus('Web3 & Solidity', '9999')">View Syllabus</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-tag">Business</div>
+                    <h3>IT Project Management</h3>
+                    <p class="price-display">₹3,999</p>
+                    <div class="card-btns">
+                        <button class="btn-enroll" onclick="openEnroll('IT Project Management', '3999')">Enroll Now</button>
+                        <button class="btn-text-link" onclick="openSyllabus('IT Project Management', '3999')">View Syllabus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-box-large">
+                <div class="contact-left">
+                    <div class="hero-badge" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); margin-bottom: 20px;">
+                        Contact Us
+                    </div>
+                    <h2>Get in touch with <br><span class="text-gradient">our experts</span></h2>
+                    <p>Have questions about our certifications? Our team is ready to help you scale your skills.</p>
+                
+                    <div class="contact-details" style="margin-top: 30px;">
+                        <div class="detail-item" style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px;">
+                            <i class="fa-solid fa-envelope-open-text" style="font-size: 1.5rem; color: var(--primary);"></i>
+                            <div>
+                                <span style="display: block; font-size: 0.8rem; opacity: 0.7;">Email us at</span>
+                                <p style="font-weight: 700;">support@drdit.com</p>
+                            </div>
+                        </div>
+                        <div class="detail-item" style="display: flex; gap: 15px; align-items: center;">
+                            <i class="fa-solid fa-phone-volume" style="font-size: 1.5rem; color: var(--primary);"></i>
+                            <div>
+                                <span style="display: block; font-size: 0.8rem; opacity: 0.7;">Call us</span>
+                                <p style="font-weight: 700;">+91 98765 43210</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-right">
+                    <form class="contact-form">
+                        <div class="input-group">
+                            <label for="cName">Full Name</label>
+                            <input type="text" id="cName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="cEmail">Email Address</label>
+                            <input type="email" id="cEmail" placeholder="email@example.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="cSubject">Inquiry Subject</label>
+                            <select id="cSubject">
+                                <option value="General">General Inquiry</option>
+                                <option value="Course">Course Enrollment</option>
+                                <option value="Corporate">Corporate Training</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="cMessage">Message</label>
+                            <textarea id="cMessage" rows="4" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; padding: 18px;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="enrollOverlay" class="enroll-overlay hidden">
+        <div class="enroll-modal">
+            <button class="close-modal" onclick="closeEnroll()">&times;</button>
+            <div class="enroll-header">
+                <h2>Enrollment Form</h2>
+                <p id="selectedCourseName">Selected Course</p>
+                <h4 id="selectedCoursePrice">₹0</h4>
+            </div>
+            <form onsubmit="handleEnroll(event)">
+                <div class="input-group">
+                    <label for="studentName">Full Name</label>
+                    <input type="text" id="studentName" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label for="studentPhone">Mobile Number</label>
+                    <input type="tel" id="studentPhone" placeholder="+91" required>
+                </div>
+                <div class="input-group">
+                    <label for="studentStatus">Background Status</label>
+                    <select id="studentStatus" required>
+                        <option value="">Select Status</option>
+                        <option value="Student">Student</option>
+                        <option value="Professional">Professional</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%; margin-top:10px;">Confirm & Pay</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="syllabusOverlay" class="enroll-overlay hidden">
+        <div class="enroll-modal" style="max-width: 600px;">
+            <button class="close-modal" onclick="closeSyllabus()">&times;</button>
+            <div class="enroll-header">
+                <h2>Program Syllabus</h2>
+                <p id="syllabusTitle" style="color: var(--primary);">Course Name</p>
+            </div>
+            <div id="syllabusContent" style="max-height: 350px; overflow-y: auto; margin-bottom: 20px;">
+                </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn-primary" onclick="closeSyllabus(); openEnroll(currentSyllabusCourse, currentSyllabusPrice)" style="flex: 1;">Enroll Now</button>
+                <button class="btn-outline" onclick="window.print()" style="flex: 1;">Download PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="authModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-modal" onclick="toggleModal()">&times;</button>
+            <div class="auth-header" style="text-align: center; margin-bottom: 25px;">
+                <h2 id="modalTitle">Sign In</h2>
+                <p>Welcome to DRD IT Portal</p>
+            </div>
+            <form id="authForm" data-mode="login">
+                <div class="input-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="email@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="loginPass">Password</label>
+                    <input type="password" id="loginPass" placeholder="••••••••" required>
+                </div>
+                <div class="input-group hidden" id="confirmPassGroup">
+                    <label for="confirmPass">Confirm Password</label>
+                    <input type="password" id="confirmPass" placeholder="••••••••">
+                </div>
+                <div class="captcha-wrapper">
+                    <div class="captcha-display" style="display: flex; justify-content: space-between; align-items: center;">
+                        <span id="captchaText" style="font-weight: 800; letter-spacing: 5px;">AYP488</span>
+                        <button type="button" onclick="refreshCaptcha()" aria-label="Refresh Captcha" style="background: none; border: none;">
+                            <i class="fa-solid fa-rotate"></i>
+                        </button>                    
+                    </div>
+                    <input type="text" id="captchaInput" placeholder="Enter Captcha" style="width: 100%; margin-top: 10px;" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%">Continue</button>
+            </form>
+            <div class="auth-footer" style="text-align: center; margin-top: 20px;">
+                <p id="toggleText">New here? <a href="#" onclick="switchMode('signup')" style="color: var(--primary); font-weight: 700; text-decoration: none;">Create Account</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 DRD IT Solutions. Industry-grade education for the future.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
